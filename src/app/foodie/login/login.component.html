@@ -1,0 +1,21 @@
+<form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <span class="p-3">
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput type="email" placeholder="Enter your email" name="email" formControlName="email">
+        </mat-form-field>
+    </span>
+
+    <span class="p-3">
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input matInput type="password" placeholder="Enter your password" name="password" formControlName="password">
+        </mat-form-field>
+    </span><br>
+    <span class="p-3 mb-3">
+        <button mat-raised-button color="primary">Login</button>
+    </span>
+    <div *ngIf="isIncorrectCredentials" class="pt-4 text-danger fontItalic">
+        <p>"Please enter correct email and password"</p>
+    </div>
+</form>
